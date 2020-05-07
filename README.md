@@ -3,6 +3,8 @@
 A collection of tools to make it easier to work with the 
 [Python Jira API](https://pypi.org/project/jira/).
 
+![PyPI](https://img.shields.io/pypi/v/jira-power-tools.svg) ![Build](https://github.com/dbradf/jira-power-tools/workflows/Test%20Python%20Package/badge.svg)
+
 ## Usages
 
 ### Lazy Pagination of Jira Issues
