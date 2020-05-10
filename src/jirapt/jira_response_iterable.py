@@ -1,6 +1,6 @@
 """Iterable for jira requests."""
-from concurrent.futures import ThreadPoolExecutor as Executor
 import math
+from concurrent.futures import ThreadPoolExecutor as Executor
 from queue import Queue
 from typing import Callable, Iterator
 
