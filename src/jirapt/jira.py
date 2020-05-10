@@ -4,8 +4,7 @@ from typing import Dict, Iterable, Optional
 from jira import JIRA, Issue
 from jira.client import ResultList
 
-from jirapt.jira_response_iterable import (JiraResponseIterable,
-                                           JiraResponseIterableParallel)
+from jirapt.jira_response_iterable import JiraResponseIterable, JiraResponseIterableParallel
 
 
 def search_issues(

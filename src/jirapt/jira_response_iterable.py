@@ -64,11 +64,11 @@ class JiraResponseIterableParallel(object):
         self.total_results = results.total
         self.get_more_fn = get_more_fn
         self.n_workers = n_workers
-        self.queue = Queue()
+        self.queue: Queue = Queue()
 
         self._add_results_to_queue(results)
 
-    def _add_results_to_queue(self, results) -> None:
+    def _add_results_to_queue(self, results: ResultList) -> None:
         """
         Add a set of jira responses to the queue.
 
@@ -77,7 +77,7 @@ class JiraResponseIterableParallel(object):
         for r in results:
             self.queue.put(r)
 
-    def _get_more(self, index: int):
+    def _get_more(self, index: int) -> ResultList:
         """
         Get the specified page of results from jira.
 
