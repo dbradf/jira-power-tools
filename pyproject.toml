@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jira-power-tools"
-version = "0.2.0"
+version = "0.2.1"
 description = "Tools to improve working with the python jira API."
 authors = ["David Bradford <david.bradford@mongodb.com>"]
 license = "Apache-2.0"

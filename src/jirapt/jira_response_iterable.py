@@ -89,7 +89,6 @@ class JiraResponseIterableParallel(object):
     def _gather_results(self) -> None:
         """Spawn workers and gather results from jira."""
         total_workers = math.ceil(self.total_results / self.page_size)
-        print(f"total_workers {total_workers}")
         with Executor(max_workers=self.n_workers) as exe:
             workers = [exe.submit(self._get_more, i) for i in range(1, total_workers)]
 
