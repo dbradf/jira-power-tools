@@ -1,6 +1,6 @@
 # jira power tools
 
-A collection of tools to make it easier to work with the 
+A collection of tools to make it easier to work with the
 [Python Jira API](https://pypi.org/project/jira/).
 
 [![PyPI](https://img.shields.io/pypi/v/jira-power-tools.svg)](https://pypi.org/project/jira-power-tools/) ![Build](https://github.com/dbradf/jira-power-tools/workflows/Test%20Python%20Package/badge.svg)
@@ -28,3 +28,24 @@ for issue in issues:
 Note: You gather results in parallel by specifying `n_threads=N`. This will gather all the results
 before starting iteration. So there will be a delay before the first iteration starts and all the
 results will need to fit into memory.
+
+### Dictionary based JQL Queries
+
+Use dictionaries to programmatically build queries instead of raw strings.
+
+```python
+import jirapt
+
+jira = # Jira server instance
+query = {
+    "and": [
+        {"assignee": {"=": team_member}},
+        {"resolved": {">": f"-{days}d"}},
+        {"project": {"not in": ["'Unrelated Project'"]}},
+    ]
+}
+
+issues = jirapt.query_issues(jira, query, ...)
+for issue in issues:
+    # process issue
+```
